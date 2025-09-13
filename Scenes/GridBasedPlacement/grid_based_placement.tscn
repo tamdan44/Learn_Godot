@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b738r0myhij1l"]
+
+[ext_resource type="TileSet" uid="uid://dega0iol75x2x" path="res://Resources/TileSets/sample_tileset.tres" id="2_1dtpg"]
+[ext_resource type="Script" path="res://Scenes/GridBasedPlacement/grid_based_placement.gd" id="3_kwmeq"]
+
+[node name="GridBasedPlacement" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="Tilemap" type="Node2D" parent="."]
+script = ExtResource("3_kwmeq")
+
+[node name="Base" type="TileMapLayer" parent="Tilemap"]
+use_parent_material = true
+tile_set = ExtResource("2_1dtpg")
+rendering_quadrant_size = 128
+
+[node name="Selected" type="TileMapLayer" parent="Tilemap"]
+use_parent_material = true
+tile_set = ExtResource("2_1dtpg")
+rendering_quadrant_size = 128

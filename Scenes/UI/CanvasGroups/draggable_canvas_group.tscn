@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://rdg0ve0vgfy6"]
+
+[ext_resource type="Shader" path="res://Resources/Shaders/outline_border.gdshader" id="1_voqke"]
+[ext_resource type="Script" path="res://Scenes/UI/CanvasGroups/draggable_canvas_group.gd" id="2_afvkn"]
+[ext_resource type="Texture2D" uid="uid://bbym80caxwmaf" path="res://icon.svg" id="3_fdw0y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfymi"]
+shader = ExtResource("1_voqke")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 5.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gvne6"]
+blend_mode = 2
+
+[node name="DraggableCanvasGroup" type="CanvasGroup"]
+material = SubResource("ShaderMaterial_xfymi")
+script = ExtResource("2_afvkn")
+
+[node name="icon1" type="Sprite2D" parent="."]
+texture = ExtResource("3_fdw0y")
+
+[node name="icon2" type="Sprite2D" parent="."]
+position = Vector2(86, 23)
+texture = ExtResource("3_fdw0y")
+
+[node name="icon3" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_gvne6")
+position = Vector2(61, -57)
+texture = ExtResource("3_fdw0y")
